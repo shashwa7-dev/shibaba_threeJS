@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, useParams } from "react-router-dom";
+import NFT from "./NFT";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/:nft_id" element={<NFT />} />
+      <Route
+        path="*"
+        element={
+          <a href="/1" style={{ fontSize: "2rem", color: "white" }}>
+            SHiba baaa!
+          </a>
+        }
+      />
+    </Routes>
   );
 }
 
